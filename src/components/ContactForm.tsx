@@ -50,19 +50,18 @@ export default function ContactForm() {
     <section id="contact" className="bg-canvas py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-coral-500">
+          <span className="text-coral-500 text-xs font-bold tracking-widest uppercase">
             Let's talk
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+          <h2 className="text-navy-950 mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
             Start your project
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-navy-600 sm:text-lg">
-            Tell us a bit about your brand and what you need — we'll take it
-            from there.
+          <p className="text-navy-600 mt-4 text-base leading-relaxed sm:text-lg">
+            Tell us a bit about your brand and what you need — we'll take it from there.
           </p>
         </div>
 
-        <div className="relative mt-12 overflow-hidden rounded-3xl bg-white p-6 shadow-card ring-1 ring-navy-900/5 sm:p-10">
+        <div className="shadow-card ring-navy-900/5 relative mt-12 overflow-hidden rounded-3xl bg-white p-6 ring-1 sm:p-10">
           <AnimatePresence mode="wait">
             {submitted ? (
               <motion.div
@@ -73,20 +72,19 @@ export default function ContactForm() {
                 transition={{ duration: 0.35 }}
                 className="flex flex-col items-center py-12 text-center"
               >
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-mint-500/10 text-mint-500">
+                <span className="bg-mint-500/10 text-mint-500 flex h-16 w-16 items-center justify-center rounded-full">
                   <CheckCircle2 size={32} />
                 </span>
-                <h3 className="mt-5 text-xl font-extrabold text-navy-950">
+                <h3 className="text-navy-950 mt-5 text-xl font-extrabold">
                   Thanks — your brief is in!
                 </h3>
-                <p className="mt-2 max-w-sm text-sm leading-relaxed text-navy-600">
-                  We've received your project details and will reach out
-                  soon to talk next steps.
+                <p className="text-navy-600 mt-2 max-w-sm text-sm leading-relaxed">
+                  We've received your project details and will reach out soon to talk next steps.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 text-sm font-bold text-navy-700 underline decoration-navy-300 underline-offset-4 hover:text-navy-900"
+                  className="text-navy-700 decoration-navy-300 hover:text-navy-900 mt-6 text-sm font-bold underline underline-offset-4"
                 >
                   Submit another brief
                 </button>
@@ -242,7 +240,10 @@ export default function ContactForm() {
                     className={`${inputClass} resize-none`}
                     {...register("brandDetails", {
                       required: "Tell us a little about your brand.",
-                      minLength: { value: 20, message: "A few more details would help — 20+ characters." },
+                      minLength: {
+                        value: 20,
+                        message: "A few more details would help — 20+ characters.",
+                      },
                     })}
                   />
                   {errors.brandDetails && (
@@ -254,7 +255,7 @@ export default function ContactForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy-900 px-7 py-4 text-sm font-bold text-white shadow-card transition-transform hover:-translate-y-0.5 hover:bg-navy-800 disabled:pointer-events-none disabled:opacity-70 sm:w-auto sm:text-base"
+                    className="bg-navy-900 shadow-card hover:bg-navy-800 inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 disabled:pointer-events-none disabled:opacity-70 sm:w-auto sm:text-base"
                   >
                     {isSubmitting ? (
                       <>

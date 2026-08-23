@@ -14,24 +14,24 @@ export default function About() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="lg:sticky lg:top-28 lg:self-start"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-coral-400">
+          <span className="text-coral-400 text-xs font-bold tracking-widest uppercase">
             We help businesses
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
-            Being Designs is your one-stop creative studio for brands that
-            want to <span className="text-navy-300">stand out.</span>
+          <h2 className="mt-3 text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl">
+            Being Designs is your one-stop creative studio for brands that want to{" "}
+            <span className="text-navy-300">stand out.</span>
           </h2>
 
           <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white/5 px-5 py-4 ring-1 ring-white/10">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
               <Users size={18} />
             </span>
-            <p className="text-sm font-semibold text-navy-100">
+            <p className="text-navy-100 text-sm font-semibold">
               Founded by creators &amp; business owners.
             </p>
           </div>
 
-          <p className="mt-8 text-xl font-extrabold leading-snug text-white sm:text-2xl">
+          <p className="mt-8 text-xl leading-snug font-extrabold text-white sm:text-2xl">
             No fluff. No flashy effects.
             <br />
             Just content that works.
@@ -40,7 +40,7 @@ export default function About() {
 
         {/* Right: five strengths */}
         <div>
-          <p className="mb-6 text-sm font-bold uppercase tracking-widest text-navy-300">
+          <p className="text-navy-300 mb-6 text-sm font-bold tracking-widest uppercase">
             We do five things really well
           </p>
           <ol className="space-y-4">
@@ -58,14 +58,14 @@ export default function About() {
                   <span className="font-display text-2xl font-extrabold text-white/15 sm:text-3xl">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-800 text-coral-400">
+                  <span className="bg-navy-800 text-coral-400 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
                     <Icon size={20} />
                   </span>
                   <span>
                     <span className="block text-base font-bold text-white sm:text-lg">
                       {strength.title}
                     </span>
-                    <span className="mt-1 block text-sm leading-relaxed text-navy-200">
+                    <span className="text-navy-200 mt-1 block text-sm leading-relaxed">
                       {strength.description}
                     </span>
                   </span>
