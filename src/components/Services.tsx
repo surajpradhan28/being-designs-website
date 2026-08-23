@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { serviceCategories, type ServiceCategory } from "../data/services";
 
-const accentStyles: Record<ServiceCategory["accent"], { badge: string; dot: string; ring: string }> = {
+const accentStyles: Record<
+  ServiceCategory["accent"],
+  { badge: string; dot: string; ring: string }
+> = {
   navy: {
     badge: "bg-navy-900 text-white",
     dot: "bg-navy-600",
@@ -25,15 +28,14 @@ export default function Services() {
     <section id="services" className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-coral-500">
+          <span className="text-coral-500 text-xs font-bold tracking-widest uppercase">
             What we do
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+          <h2 className="text-navy-950 mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
             Services built to make your brand stand out
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-navy-600 sm:text-lg">
-            From identity to the final edit — everything a growing brand
-            needs, under one roof.
+          <p className="text-navy-600 mt-4 text-base leading-relaxed sm:text-lg">
+            From identity to the final edit — everything a growing brand needs, under one roof.
           </p>
         </div>
 
@@ -48,7 +50,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                className="rounded-3xl border border-navy-100 bg-canvas p-6 sm:p-8 lg:p-10"
+                className="border-navy-100 bg-canvas rounded-3xl border p-6 sm:p-8 lg:p-10"
               >
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr] lg:gap-12">
                   <div>
@@ -57,10 +59,10 @@ export default function Services() {
                     >
                       <Icon size={22} />
                     </span>
-                    <h3 className="mt-4 text-xl font-extrabold text-navy-950 sm:text-2xl">
+                    <h3 className="text-navy-950 mt-4 text-xl font-extrabold sm:text-2xl">
                       {category.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-navy-600 sm:text-base">
+                    <p className="text-navy-600 mt-2 text-sm leading-relaxed sm:text-base">
                       {category.tagline}
                     </p>
                   </div>
@@ -69,7 +71,7 @@ export default function Services() {
                     {category.items.map((item) => (
                       <li
                         key={item.name}
-                        className={`group flex items-start gap-3 rounded-2xl bg-white p-4 ring-1 ring-navy-900/5 transition-shadow hover:shadow-soft ${accent.ring}`}
+                        className={`group ring-navy-900/5 hover:shadow-soft flex items-start gap-3 rounded-2xl bg-white p-4 ring-1 transition-shadow ${accent.ring}`}
                       >
                         <span
                           className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${accent.dot} text-white`}
@@ -77,10 +79,8 @@ export default function Services() {
                           <Check size={12} strokeWidth={3} />
                         </span>
                         <span>
-                          <span className="block text-sm font-bold text-navy-900">
-                            {item.name}
-                          </span>
-                          <span className="mt-0.5 block text-xs leading-relaxed text-navy-500">
+                          <span className="text-navy-900 block text-sm font-bold">{item.name}</span>
+                          <span className="text-navy-500 mt-0.5 block text-xs leading-relaxed">
                             {item.blurb}
                           </span>
                         </span>

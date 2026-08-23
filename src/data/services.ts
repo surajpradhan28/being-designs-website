@@ -1,9 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  Palette,
-  Video,
-  Camera,
-} from "lucide-react";
+import { Palette, Video, Camera } from "lucide-react";
 
 export interface ServiceItem {
   name: string;
@@ -70,12 +66,18 @@ export const serviceCategories: ServiceCategory[] = [
     accent: "mint",
     items: [
       { name: "Product Photography", blurb: "Clean, conversion-ready product shots." },
-      { name: "Food & Menu Photography", blurb: "Mouth-watering shots for menus and delivery apps." },
+      {
+        name: "Food & Menu Photography",
+        blurb: "Mouth-watering shots for menus and delivery apps.",
+      },
       { name: "Lifestyle Photography", blurb: "Real-world context that builds trust." },
       { name: "Brand Photography", blurb: "Founder, team and workplace imagery." },
       { name: "Commercial Photography", blurb: "Campaign-ready visuals for ads and print." },
       { name: "Social Media Content Shoots", blurb: "Batch content built for feeds and reels." },
-      { name: "Restaurant & Hospitality Photography", blurb: "Interiors, dishes and ambience that convert." },
+      {
+        name: "Restaurant & Hospitality Photography",
+        blurb: "Interiors, dishes and ambience that convert.",
+      },
     ],
   },
 ];

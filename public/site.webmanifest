@@ -1,0 +1,21 @@
+{
+  "name": "Being Designs",
+  "short_name": "Being Designs",
+  "description": "One-stop creative studio for branding, product shoots, video editing, social media and packaging.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0f1f38",
+  "background_color": "#f7f8fb",
+  "display": "standalone",
+  "start_url": "/"
+}

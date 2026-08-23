@@ -22,10 +22,9 @@ export default function Footer() {
               <Logo size={32} />
               <Wordmark className="text-lg !text-white" />
             </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-300">
-              A one-stop creative studio for brands that want to stand out —
-              branding, product shoots, video editing, social media and
-              packaging.
+            <p className="text-navy-300 mt-4 max-w-xs text-sm leading-relaxed">
+              A one-stop creative studio for brands that want to stand out — branding, product
+              shoots, video editing, social media and packaging.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {socials.map(({ label, href, icon: Icon }) => (
@@ -33,7 +32,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-navy-200 transition-colors hover:bg-white/10 hover:text-white"
+                  className="text-navy-200 flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition-colors hover:bg-white/10 hover:text-white"
                 >
                   <Icon width={16} height={16} />
                 </a>
@@ -42,13 +41,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-navy-400">
-              Studio
-            </p>
+            <p className="text-navy-400 text-xs font-bold tracking-widest uppercase">Studio</p>
             <ul className="mt-4 space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-navy-200 hover:text-white">
+                  <a href={link.href} className="text-navy-200 text-sm hover:text-white">
                     {link.label}
                   </a>
                 </li>
@@ -56,7 +53,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-coral-400 hover:text-coral-300"
+                  className="text-coral-400 hover:text-coral-300 inline-flex items-center gap-1 text-sm font-semibold"
                 >
                   Start a Project
                   <ArrowUpRight size={14} />
@@ -66,13 +63,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-navy-400">
-              Services
-            </p>
+            <p className="text-navy-400 text-xs font-bold tracking-widest uppercase">Services</p>
             <ul className="mt-4 space-y-3">
               {serviceCategories.map((category) => (
                 <li key={category.id}>
-                  <a href="#services" className="text-sm text-navy-200 hover:text-white">
+                  <a href="#services" className="text-navy-200 text-sm hover:text-white">
                     {category.title}
                   </a>
                 </li>
@@ -82,12 +77,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-xs text-navy-400">
-            © {year} Being Designs. All rights reserved.
-          </p>
-          <p className="text-xs text-navy-400">
-            Founded by creators &amp; business owners.
-          </p>
+          <p className="text-navy-400 text-xs">© {year} Being Designs. All rights reserved.</p>
+          <p className="text-navy-400 text-xs">Founded by creators &amp; business owners.</p>
         </div>
       </div>
     </footer>

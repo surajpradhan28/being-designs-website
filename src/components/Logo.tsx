@@ -22,10 +22,7 @@ export default function Logo({ size = 36, animated = false, className = "" }: Lo
       aria-hidden="true"
     >
       <rect width="40" height="40" rx="11" className="fill-navy-900" />
-      <path
-        d="M20 9L23.2 16.8L31 20L23.2 23.2L20 31L16.8 23.2L9 20L16.8 16.8L20 9Z"
-        fill="white"
-      />
+      <path d="M20 9L23.2 16.8L31 20L23.2 23.2L20 31L16.8 23.2L9 20L16.8 16.8L20 9Z" fill="white" />
     </svg>
   );
 
@@ -47,7 +44,7 @@ export default function Logo({ size = 36, animated = false, className = "" }: Lo
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
-    <span className={`font-display font-extrabold tracking-tight text-navy-900 ${className}`}>
+    <span className={`font-display text-navy-900 font-extrabold tracking-tight ${className}`}>
       Being <span className="text-coral-500">Designs</span>
     </span>
   );
