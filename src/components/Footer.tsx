@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <a href="#top" className="flex items-center gap-2.5" aria-label="Being Designs home">
-              <Logo size={32} />
+              <Logo size={30} variant="white" />
               <Wordmark className="text-lg !text-white" />
             </a>
             <p className="text-navy-300 mt-4 max-w-xs text-sm leading-relaxed">
