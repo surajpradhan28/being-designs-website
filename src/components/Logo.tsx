@@ -1,44 +1,37 @@
-import { motion } from "framer-motion";
+import logoMarkNavy from "../assets/logo-mark.png";
+import logoMarkWhite from "../assets/logo-mark-white.png";
 
 interface LogoProps {
+  /** Rendered height in px. Width follows the mark's natural aspect ratio. */
   size?: number;
-  animated?: boolean;
+  /** Use the white cut for dark backgrounds (e.g. the footer). */
+  variant?: "navy" | "white";
   className?: string;
 }
 
-/**
- * Abstract diamond/spark mark used as the Being Designs logo.
- * Renders as a static mark by default; set `animated` for a slow
- * continuous rotation + pulse, used in the hero banner.
- */
-export default function Logo({ size = 36, animated = false, className = "" }: LogoProps) {
-  const markContent = (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 40 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect width="40" height="40" rx="11" className="fill-navy-900" />
-      <path d="M20 9L23.2 16.8L31 20L23.2 23.2L20 31L16.8 23.2L9 20L16.8 16.8L20 9Z" fill="white" />
-    </svg>
-  );
+// Natural aspect ratio (width / height) of the source mark asset.
+const MARK_ASPECT = 640 / 335;
 
-  if (!animated) {
-    return <span className={className}>{markContent}</span>;
-  }
+/**
+ * The "be." brand mark. Sourced from the Being Designs logo artwork —
+ * see src/assets/logo-mark.png (light backgrounds) and
+ * src/assets/logo-mark-white.png (dark backgrounds, e.g. the footer).
+ */
+export default function Logo({ size = 32, variant = "navy", className = "" }: LogoProps) {
+  const src = variant === "white" ? logoMarkWhite : logoMarkNavy;
 
   return (
-    <motion.span
-      className={className}
-      animate={{ rotate: [0, 360] }}
-      transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
-      style={{ display: "inline-block" }}
-    >
-      {markContent}
-    </motion.span>
+    <img
+      src={src}
+      alt=""
+      // Decorative: the wrapping link already carries an accessible name
+      // ("Being Designs home"), so this image is hidden from screen readers.
+      aria-hidden="true"
+      width={Math.round(size * MARK_ASPECT)}
+      height={size}
+      className={`block ${className}`}
+      style={{ height: size, width: "auto" }}
+    />
   );
 }
 

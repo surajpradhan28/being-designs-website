@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
-import { strengths } from "../data/about";
+import { strengths, founders } from "../data/about";
 
 export default function About() {
   return (
@@ -22,13 +22,26 @@ export default function About() {
             <span className="text-navy-300">stand out.</span>
           </h2>
 
-          <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white/5 px-5 py-4 ring-1 ring-white/10">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
-              <Users size={18} />
-            </span>
-            <p className="text-navy-100 text-sm font-semibold">
-              Founded by creators &amp; business owners.
-            </p>
+          <div className="mt-8 rounded-2xl bg-white/5 px-5 py-4 ring-1 ring-white/10">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
+                <Users size={18} />
+              </span>
+              <p className="text-navy-100 text-sm font-semibold">
+                Founded by creators &amp; business owners.
+              </p>
+            </div>
+
+            <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-white/10 pt-4">
+              {founders.map((founder) => (
+                <div key={founder.role}>
+                  <dt className="text-navy-400 text-[11px] font-bold tracking-widest uppercase">
+                    {founder.role}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-white">{founder.name}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <p className="mt-8 text-xl leading-snug font-extrabold text-white sm:text-2xl">

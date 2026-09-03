@@ -34,7 +34,7 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10"
       >
         <a href="#top" className="flex items-center gap-2.5" aria-label="Being Designs home">
-          <Logo size={34} />
+          <Logo size={30} />
           <Wordmark className="text-lg sm:text-xl" />
         </a>
 

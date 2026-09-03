@@ -1,33 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Palette, Video, Camera, Sparkles } from "lucide-react";
-import Logo from "./Logo";
-
-const floatCards = [
-  {
-    icon: Palette,
-    title: "Brand Identity",
-    subtitle: "Logo · Colour · System",
-    className: "left-2 top-4 sm:left-6 sm:top-8",
-    duration: 6,
-    delay: 0,
-  },
-  {
-    icon: Camera,
-    title: "Product Shoots",
-    subtitle: "Photo · Video",
-    className: "right-0 top-24 sm:right-2 sm:top-28",
-    duration: 7,
-    delay: 0.4,
-  },
-  {
-    icon: Video,
-    title: "Reels & Ads",
-    subtitle: "Edit · Motion",
-    className: "left-6 bottom-6 sm:left-10 sm:bottom-10",
-    duration: 6.5,
-    delay: 0.8,
-  },
-];
+import { ArrowRight, Sparkles } from "lucide-react";
+import heroVideo from "../assets/hero/hero-logo-animation.mp4";
+import heroPoster from "../assets/hero/hero-logo-poster.jpg";
 
 export default function Hero() {
   return (
@@ -83,47 +57,26 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right: animated banner visual */}
+        {/* Right: animated banner — brand mark + service highlights */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto flex h-[380px] w-full max-w-md items-center justify-center sm:h-[440px] lg:h-[480px]"
+          className="relative mx-auto w-full max-w-md"
         >
-          {/* Rotating ring */}
-          <motion.div
-            aria-hidden="true"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="border-navy-300/70 absolute h-56 w-56 rounded-full border border-dashed sm:h-64 sm:w-64"
-          />
-          <div
-            aria-hidden="true"
-            className="bg-[radial-gradient(closest-side,theme(colors.navy.100),transparent)] absolute h-72 w-72 rounded-full sm:h-80 sm:w-80"
-          />
-
-          {/* Central animated logo mark */}
-          <div className="bg-navy-900 shadow-card relative flex h-32 w-32 items-center justify-center rounded-[2rem] sm:h-36 sm:w-36">
-            <Logo size={64} animated />
-          </div>
-
-          {/* Floating service cards */}
-          {floatCards.map(({ icon: Icon, title, subtitle, className, duration, delay }) => (
-            <motion.div
-              key={title}
-              className={`shadow-card ring-navy-900/5 absolute flex items-center gap-3 rounded-2xl bg-white px-4 py-3 ring-1 ${className}`}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration, delay, repeat: Infinity, ease: "easeInOut" }}
+          <div className="shadow-card overflow-hidden rounded-[2rem]">
+            <video
+              className="block h-auto w-full"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={heroPoster}
+              aria-label="Being Designs: brand identity, product shoots, and reels & ads"
             >
-              <span className="bg-navy-50 text-navy-700 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl">
-                <Icon size={18} />
-              </span>
-              <span className="text-left">
-                <span className="text-navy-900 block text-xs font-bold">{title}</span>
-                <span className="text-navy-500 block text-[11px]">{subtitle}</span>
-              </span>
-            </motion.div>
-          ))}
+              <source src={heroVideo} type="video/mp4" />
+            </video>
+          </div>
         </motion.div>
       </div>
     </section>

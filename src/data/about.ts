@@ -34,3 +34,13 @@ export const strengths: Strength[] = [
     icon: Package,
   },
 ];
+
+export interface Founder {
+  role: string;
+  name: string;
+}
+
+export const founders: Founder[] = [
+  { role: "Founder", name: "Shubham Adelkar" },
+  { role: "Co-Founder", name: "Riya Sarvankar" },
+];
