@@ -5,7 +5,7 @@ import { serviceCategories } from "../data/services";
 import { InstagramIcon, LinkedinIcon, FacebookIcon } from "./SocialIcons";
 
 const socials = [
-  { label: "Instagram", href: "#", icon: InstagramIcon },
+  { label: "Instagram", href: "https://www.instagram.com/being_designs_/", icon: InstagramIcon },
   { label: "LinkedIn", href: "#", icon: LinkedinIcon },
   { label: "Facebook", href: "#", icon: FacebookIcon },
 ];
@@ -27,16 +27,21 @@ export default function Footer() {
               shoots, video editing, social media and packaging.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              {socials.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="text-navy-200 flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  <Icon width={16} height={16} />
-                </a>
-              ))}
+              {socials.map(({ label, href, icon: Icon }) => {
+                const isExternal = href.startsWith("http");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="text-navy-200 flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <Icon width={16} height={16} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
