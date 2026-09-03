@@ -12,29 +12,26 @@ export default function Hero() {
         className="bg-[radial-gradient(60%_50%_at_50%_0%,theme(colors.navy.100),transparent)] pointer-events-none absolute inset-x-0 top-0 -z-10 h-[720px]"
       />
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 pb-16 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:px-10 lg:pb-24">
-        {/* Left: copy */}
+      <div className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-10 lg:pb-24">
+        {/* Visually-hidden h1: keeps a real heading for accessibility/SEO now that the
+            headline is no longer shown on screen — the video conveys it visually. */}
+        <h1 className="sr-only">
+          Your one-stop creative studio for brands that want to stand out.
+        </h1>
+
+        {/* Badge, CTAs, stats */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center text-center"
         >
           <span className="bg-navy-900/5 text-navy-700 ring-navy-900/10 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold tracking-wide ring-1 sm:text-sm">
             <Sparkles size={14} className="text-coral-500" />
             CREATIVE DESIGN STUDIO
           </span>
 
-          <h1 className="text-navy-950 mt-6 text-4xl leading-[1.08] font-extrabold tracking-tight sm:text-5xl lg:text-[3.4rem]">
-            Your one-stop creative studio for brands that{" "}
-            <span className="text-navy-500">want to stand out.</span>
-          </h1>
-
-          <p className="text-navy-700 mt-6 max-w-lg text-base leading-relaxed sm:text-lg">
-            Branding, product shoots, video editing, social content and packaging — no fluff, no
-            flashy effects, just creative that works.
-          </p>
-
-          <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+          <div className="mt-7 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             <a
               href="#services"
               className="border-navy-900 text-navy-900 hover:bg-navy-900 inline-flex items-center justify-center gap-2 rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-colors hover:text-white sm:text-base"
@@ -50,19 +47,19 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="text-navy-600 mt-10 flex items-center gap-3 text-sm">
+          <div className="text-navy-600 mt-8 flex items-center gap-3 text-sm">
             <span className="text-navy-900 font-bold">5 services.</span>
             <span className="bg-navy-300 h-1 w-1 rounded-full" />
             <span>1 studio, built by creators &amp; business owners.</span>
           </div>
         </motion.div>
 
-        {/* Right: animated banner — brand mark + service highlights */}
+        {/* Full-width animated banner — brand mark + service highlights */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto w-full max-w-md"
+          className="relative mx-auto mt-10 w-full lg:mt-14"
         >
           <div className="shadow-card overflow-hidden rounded-[2rem]">
             <video
