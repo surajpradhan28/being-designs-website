@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroVideo from "../assets/hero/hero-logo-animation.mp4";
 import heroPoster from "../assets/hero/hero-logo-poster.jpg";
 
@@ -19,47 +19,12 @@ export default function Hero() {
           Your one-stop creative studio for brands that want to stand out.
         </h1>
 
-        {/* Badge, CTAs, stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-center text-center"
-        >
-          <span className="bg-navy-900/5 text-navy-700 ring-navy-900/10 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold tracking-wide ring-1 sm:text-sm">
-            <Sparkles size={14} className="text-coral-500" />
-            CREATIVE DESIGN STUDIO
-          </span>
-
-          <div className="mt-7 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-            <a
-              href="#services"
-              className="border-navy-900 text-navy-900 hover:bg-navy-900 inline-flex items-center justify-center gap-2 rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-colors hover:text-white sm:text-base"
-            >
-              View Services
-            </a>
-            <a
-              href="#contact"
-              className="bg-navy-900 shadow-card hover:bg-navy-800 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 sm:text-base"
-            >
-              Start Your Project
-              <ArrowRight size={18} strokeWidth={2.5} />
-            </a>
-          </div>
-
-          <div className="text-navy-600 mt-8 flex items-center gap-3 text-sm">
-            <span className="text-navy-900 font-bold">5 services.</span>
-            <span className="bg-navy-300 h-1 w-1 rounded-full" />
-            <span>1 studio, built by creators &amp; business owners.</span>
-          </div>
-        </motion.div>
-
         {/* Full-width animated banner — brand mark + service highlights */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto mt-10 w-full lg:mt-14"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative mx-auto w-full"
         >
           <div className="shadow-card overflow-hidden rounded-[2rem]">
             <video
@@ -74,6 +39,28 @@ export default function Hero() {
               <source src={heroVideo} type="video/mp4" />
             </video>
           </div>
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row lg:mt-14"
+        >
+          <a
+            href="#services"
+            className="border-navy-900 text-navy-900 hover:bg-navy-900 inline-flex items-center justify-center gap-2 rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-colors hover:text-white sm:text-base"
+          >
+            View Services
+          </a>
+          <a
+            href="#contact"
+            className="bg-navy-900 shadow-card hover:bg-navy-800 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 sm:text-base"
+          >
+            Start Your Project
+            <ArrowRight size={18} strokeWidth={2.5} />
+          </a>
         </motion.div>
       </div>
     </section>
