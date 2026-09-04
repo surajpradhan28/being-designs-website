@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-3xl"
+          className="relative mx-auto w-full max-w-xl"
         >
           <div className="shadow-card overflow-hidden rounded-[2rem]">
             <video
