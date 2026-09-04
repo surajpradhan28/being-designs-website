@@ -19,12 +19,12 @@ export default function Hero() {
           Your one-stop creative studio for brands that want to stand out.
         </h1>
 
-        {/* Full-width animated banner — brand mark + service highlights */}
+        {/* Animated banner — brand mark + service highlights */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative mx-auto w-full"
+          className="relative mx-auto w-full max-w-3xl"
         >
           <div className="shadow-card overflow-hidden rounded-[2rem]">
             <video
