@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import Logo, { Wordmark } from "./Logo";
+import Logo from "./Logo";
 import { navLinks } from "../data/nav";
 
 export default function Navbar() {
@@ -35,7 +35,6 @@ export default function Navbar() {
       >
         <a href="#top" className="flex items-center gap-2.5" aria-label="Being Designs home">
           <Logo size={30} />
-          <Wordmark className="text-lg sm:text-xl" />
         </a>
 
         <ul className="hidden items-center gap-9 md:flex">
