@@ -5,7 +5,7 @@ import heroPoster from "../assets/hero/hero-logo-poster.jpg";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-8 sm:pt-12 lg:pt-16">
+    <section id="top" className="relative isolate overflow-hidden pt-8 sm:pt-12 lg:pt-16">
       {/* Ambient background accents */}
       <div
         aria-hidden="true"
@@ -19,13 +19,13 @@ export default function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 hidden lg:block"
       >
-        <div className="bg-[radial-gradient(closest-side,theme(colors.coral.400),transparent)] absolute top-16 left-[6%] h-72 w-72 rounded-full opacity-20 blur-3xl" />
-        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.300),transparent)] absolute top-56 right-[8%] h-80 w-80 rounded-full opacity-25 blur-3xl" />
-        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.200),transparent)] absolute bottom-0 left-[12%] h-64 w-64 rounded-full opacity-25 blur-3xl" />
+        <div className="bg-[radial-gradient(closest-side,theme(colors.coral.400),transparent)] absolute top-16 left-[6%] h-72 w-72 rounded-full opacity-40 blur-3xl" />
+        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.300),transparent)] absolute top-56 right-[8%] h-80 w-80 rounded-full opacity-50 blur-3xl" />
+        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.200),transparent)] absolute bottom-0 left-[12%] h-64 w-64 rounded-full opacity-50 blur-3xl" />
         <div
           className="absolute inset-x-0 top-10 bottom-10 [mask-image:radial-gradient(65%_60%_at_50%_45%,black,transparent)] opacity-[0.35]"
           style={{
-            backgroundImage: "radial-gradient(theme(colors.navy.300) 1.5px, transparent 1.5px)",
+            backgroundImage: "radial-gradient(#82a7d9 1.5px, transparent 1.5px)",
             backgroundSize: "28px 28px",
           }}
         />
