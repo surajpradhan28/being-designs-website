@@ -35,10 +35,19 @@ export default function Logo({ size = 32, variant = "navy", className = "" }: Lo
   );
 }
 
-export function Wordmark({ className = "" }: { className?: string }) {
+interface WordmarkProps {
+  className?: string;
+  /** Use an all-white treatment for dark backgrounds (e.g. the footer),
+   * where the coral "Designs" accent no longer has enough presence. */
+  variant?: "navy" | "white";
+}
+
+export function Wordmark({ className = "", variant = "navy" }: WordmarkProps) {
   return (
-    <span className={`font-display text-navy-900 font-extrabold tracking-tight ${className}`}>
-      Being <span className="text-coral-500">Designs</span>
+    <span
+      className={`font-display font-extrabold tracking-tight ${variant === "white" ? "text-white" : "text-navy-900"} ${className}`}
+    >
+      Being <span className={variant === "white" ? "text-white" : "text-coral-500"}>Designs</span>
     </span>
   );
 }
