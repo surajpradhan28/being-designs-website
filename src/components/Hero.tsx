@@ -12,6 +12,25 @@ export default function Hero() {
         className="bg-[radial-gradient(60%_50%_at_50%_0%,theme(colors.navy.100),transparent)] pointer-events-none absolute inset-x-0 top-0 -z-10 h-[720px]"
       />
 
+      {/* Decorative side blobs + pattern — fill the empty gutters beside the
+          narrow video card on wide viewports. Purely decorative, hidden on
+          smaller screens where there's no side space to fill. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 hidden lg:block"
+      >
+        <div className="bg-[radial-gradient(closest-side,theme(colors.coral.400),transparent)] absolute top-16 left-[6%] h-72 w-72 rounded-full opacity-20 blur-3xl" />
+        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.300),transparent)] absolute top-56 right-[8%] h-80 w-80 rounded-full opacity-25 blur-3xl" />
+        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.200),transparent)] absolute bottom-0 left-[12%] h-64 w-64 rounded-full opacity-25 blur-3xl" />
+        <div
+          className="absolute inset-x-0 top-10 bottom-10 [mask-image:radial-gradient(65%_60%_at_50%_45%,black,transparent)] opacity-[0.35]"
+          style={{
+            backgroundImage: "radial-gradient(theme(colors.navy.300) 1.5px, transparent 1.5px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+      </div>
+
       <div className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-10 lg:pb-24">
         {/* Visually-hidden h1: keeps a real heading for accessibility/SEO now that the
             headline is no longer shown on screen — the video conveys it visually. */}
