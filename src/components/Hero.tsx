@@ -5,67 +5,63 @@ import heroPoster from "../assets/hero/hero-logo-poster.jpg";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden pt-8 sm:pt-12 lg:pt-16">
-      {/* Ambient background accents */}
-      <div
-        aria-hidden="true"
-        className="bg-[radial-gradient(60%_50%_at_50%_0%,theme(colors.navy.100),transparent)] pointer-events-none absolute inset-x-0 top-0 -z-10 h-[720px]"
-      />
-
-      {/* Decorative side blobs + pattern — fill the empty gutters beside the
-          narrow video card on wide viewports. Purely decorative, hidden on
-          smaller screens where there's no side space to fill. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 hidden lg:block"
-      >
-        <div className="bg-[radial-gradient(closest-side,theme(colors.coral.400),transparent)] absolute top-16 left-[6%] h-72 w-72 rounded-full opacity-40 blur-3xl" />
-        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.300),transparent)] absolute top-56 right-[8%] h-80 w-80 rounded-full opacity-50 blur-3xl" />
-        <div className="bg-[radial-gradient(closest-side,theme(colors.navy.200),transparent)] absolute bottom-0 left-[12%] h-64 w-64 rounded-full opacity-50 blur-3xl" />
+    <section id="top" className="relative overflow-hidden">
+      {/* Dark banner: headline copy + video, side by side */}
+      <div className="bg-navy-950 relative isolate overflow-hidden">
+        {/* Ambient glow behind the video */}
         <div
-          className="absolute inset-x-0 top-10 bottom-10 [mask-image:radial-gradient(65%_60%_at_50%_45%,black,transparent)] opacity-[0.35]"
-          style={{
-            backgroundImage: "radial-gradient(#82a7d9 1.5px, transparent 1.5px)",
-            backgroundSize: "28px 28px",
-          }}
+          aria-hidden="true"
+          className="bg-[radial-gradient(55%_60%_at_75%_45%,theme(colors.navy.700),transparent)] pointer-events-none absolute inset-0 -z-10"
         />
+
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:px-10 lg:py-24">
+          {/* Left: copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h1 className="text-3xl leading-[1.1] font-extrabold tracking-tight text-white sm:text-4xl lg:text-[3.2rem]">
+              Your one-stop creative studio for brands that{" "}
+              <span className="text-navy-400">want to stand out.</span>
+            </h1>
+
+            <p className="text-navy-200 mt-6 max-w-md text-base leading-relaxed sm:text-lg">
+              Branding, product shoots, video editing, social content and packaging.
+            </p>
+          </motion.div>
+
+          {/* Right: animated banner — brand mark + service highlights */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+            className="relative mx-auto w-full max-w-md"
+          >
+            <div className="shadow-card overflow-hidden rounded-[2rem]">
+              <video
+                className="block h-auto w-full"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={heroPoster}
+                aria-label="Being Designs: brand identity, product shoots, and reels & ads"
+              >
+                <source src={heroVideo} type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-10 lg:pb-24">
-        {/* Visually-hidden h1: keeps a real heading for accessibility/SEO now that the
-            headline is no longer shown on screen — the video conveys it visually. */}
-        <h1 className="sr-only">
-          Your one-stop creative studio for brands that want to stand out.
-        </h1>
-
-        {/* Animated banner — brand mark + service highlights */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-xl"
-        >
-          <div className="shadow-card overflow-hidden rounded-[2rem]">
-            <video
-              className="block h-auto w-full"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster={heroPoster}
-              aria-label="Being Designs: brand identity, product shoots, and reels & ads"
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-          </div>
-        </motion.div>
-
-        {/* CTAs */}
+      {/* CTAs on the default page background below the dark banner */}
+      <div className="mx-auto max-w-7xl px-5 pt-10 pb-16 sm:px-8 lg:px-10 lg:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row lg:mt-14"
+          className="flex flex-col gap-3.5 sm:flex-row sm:items-center"
         >
           <a
             href="#services"
