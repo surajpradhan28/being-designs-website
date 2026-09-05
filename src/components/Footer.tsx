@@ -20,7 +20,7 @@ export default function Footer() {
           <div>
             <a href="#top" className="flex items-center gap-2.5" aria-label="Being Designs home">
               <Logo size={30} variant="white" />
-              <Wordmark className="text-lg !text-white" />
+              <Wordmark className="text-lg" variant="white" />
             </a>
             <p className="text-navy-300 mt-4 max-w-xs text-sm leading-relaxed">
               A one-stop creative studio for brands that want to stand out — branding, product
