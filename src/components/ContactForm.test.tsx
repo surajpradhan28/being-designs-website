@@ -1,9 +1,13 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ContactForm from "./ContactForm";
 
 describe("ContactForm", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it("shows validation errors when submitted empty", async () => {
     const user = userEvent.setup();
     render(<ContactForm />);
@@ -20,6 +24,12 @@ describe("ContactForm", () => {
   });
 
   it("shows a success state after a valid submission", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        json: () => Promise.resolve({ success: true }),
+      }),
+    );
     const user = userEvent.setup();
     render(<ContactForm />);
 

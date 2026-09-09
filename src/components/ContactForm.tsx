@@ -38,12 +38,38 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({ mode: "onBlur" });
 
-  const onSubmit = async () => {
-    // No backend is wired up yet — this simulates a network round trip
-    // so the form feels real. Swap this for a real API/email call later.
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setSubmitted(true);
-    reset();
+  const [submitError, setSubmitError] = useState(false);
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setSubmitError(false);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "d911e71d-58f9-4a3b-a481-53c0167b57f0",
+          subject: `New project brief from ${data.fullName} (${data.brandName})`,
+          from_name: "Being Designs — Website",
+          name: data.fullName,
+          email: data.email,
+          contact_number: data.contactNumber,
+          brand_name: data.brandName,
+          service_required: data.serviceRequired,
+          budget: data.budget,
+          message: data.brandDetails,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        reset();
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    }
   };
 
   return (
@@ -252,6 +278,12 @@ export default function ContactForm() {
                 </div>
 
                 <div className="sm:col-span-2">
+                  {submitError && (
+                    <p className={`${errorClass} mb-3`}>
+                      Something went wrong sending your brief. Please try again, or reach out to us
+                      directly.
+                    </p>
+                  )}
                   <button
                     type="submit"
                     disabled={isSubmitting}
